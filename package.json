@@ -1,0 +1,86 @@
+{
+  "name": "benchmark",
+  "version": "0.0.1",
+  "private": true,
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/nodesource/benchmark.git"
+  },
+  "bugs": {
+    "url": "https://github.com/nodesource/benchmark/issues"
+  },
+  "bin": {
+    "benchmark": "./bin/benchmark.js",
+    "server": "./bin/server.js"
+  },
+  "scripts": {
+    "benchmark": "$npm_package_bin_benchmark",
+    "prod:build": "NODE_ENV='production' node build-web.js",
+    "dev:build": "NODE_ENV='development' nodemon --watch 'web/' --exec node build-web.js",
+    "dev:server": "NODE_ENV='development' nodemon  --ignore 'web/' --ignore 'build/' ./bin/server.js",
+    "prod:server": "NODE_ENV='production' node ./bin/server.js",
+    "dev": "npm-run-all --parallel dev:*",
+    "prod": "npm-run-all --parallel prod:*",
+    "clear": "rm -r reports/public/data/*",
+    "display": "$npm_package_bin_server",
+    "ignore-local": "git update-index --assume-unchanged agents/configs/appdynamics.js agents/configs/dynatrace.js agents/configs/newrelic.js agents/configs/nsolid.js agents/configs/nsolid_tracing.js agents/configs/signalfx.js",
+    "track-local": "git update-index --no-assume-unchanged agents/configs/appdynamics.js agents/configs/dynatrace.js agents/configs/newrelic.js agents/configs/nsolid.js agents/configs/nsolid_tracing.js agents/configs/signalfx.js",
+    "lint": "standard"
+  },
+  "homepage": "https://github.com/nodesource/benchmark",
+  "keywords": [],
+  "author": "NodeSource",
+  "license": "MIT",
+  "dependencies": {
+    "@dynatrace/oneagent": "^1.225.133-1.0.0",
+    "@instana/autoprofile": "^1.136.0",
+    "@instana/collector": "^1.136.0",
+    "@newrelic/native-metrics": "^7.0.2",
+    "@opentelemetry/api": "^1.0.3",
+    "@opentelemetry/exporter-jaeger": "^1.0.0",
+    "@opentelemetry/instrumentation-http": "^0.26.0",
+    "@opentelemetry/node": "^0.24.0",
+    "@opentelemetry/tracing": "^0.24.0",
+    "appdynamics": "^21.8.0",
+    "autocannon": "^7.4.0",
+    "colorette": "^1.2.2",
+    "cors": "^2.8.5",
+    "dd-trace": "^1.5.0",
+    "debug": "^4.3.2",
+    "express": "~4.17.1",
+    "fastify": "^3.19.1",
+    "hapi": "~18.1.0",
+    "inquirer": "^8.1.0",
+    "koa": "~2.12.0",
+    "newrelic": "^8.5.0",
+    "open": "^8.2.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "semver": "^7.3.5",
+    "signalfx-collect": "^2.0.0-beta4",
+    "signalfx-tracing": "^0.13.0",
+    "split2": "^3.2.2",
+    "tar": "^6.1.0",
+    "undici": "^3.3.6"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.27.5",
+    "esbuild": "^0.12.25",
+    "esbuild-sass-plugin": "^1.5.2",
+    "html-minifier-terser": "^6.0.2",
+    "nodemon": "^2.0.14",
+    "npm-run-all": "^4.1.5",
+    "prop-types": "^15.7.2",
+    "standard": "^16.0.3"
+  },
+  "standard": {
+    "globals": [
+      "d3",
+      "fetch"
+    ],
+    "ignore": [
+      "reports/public/*"
+    ]
+  }
+}

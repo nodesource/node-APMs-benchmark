@@ -1,0 +1,7 @@
+node_modules
+newrelic_agent.log
+package-lock.json
+reports/public/data
+*.log
+setup_agent.sh
+build/

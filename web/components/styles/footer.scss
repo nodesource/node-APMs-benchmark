@@ -1,0 +1,46 @@
+.footer {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 30px;
+
+  div.footer-offset {
+    flex: 12;
+  }
+
+  div.footer-message {
+    flex: 88;
+    width: 250px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .sidebar-links-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 15px;
+    width: 250px;
+
+    div {
+      font-weight: 400;
+      font-size: 14px;
+
+      &:first-of-type {
+        margin-right: 30px;
+      }
+    }
+
+    a {
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    svg {
+      margin-right: 10px;
+    }
+  }
+}

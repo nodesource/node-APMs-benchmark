@@ -1,0 +1,161 @@
+@import '../Shared/styles/pane.scss';
+
+.content {
+  flex: 88;
+  display: flex;
+  flex-direction: column;
+
+  .graphs-container {
+    margin-top: 20px;
+    flex: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+
+    div.graph-pane {
+      @extend .shared-pane;
+      border-radius: 16px;
+      padding: 25px;
+      box-shadow: -3.5px -3.5px 15px 0 #262e32, 7px 7px 20px 0 rgba(16, 16, 18, 0.75);
+      position: relative;
+
+      h4 {
+        font-weight: 700;
+        color: #89A19D;
+      }
+
+      // Center the graphic
+      svg {
+        display: block;
+        margin: auto;
+      }
+    }
+  }
+
+  .dashboard-panes-row {
+    gap: 19px;
+  }
+
+  .row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .column {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+    flex: 1;
+  }
+
+  .dashboard-section-container {
+    flex: 60;
+  }
+
+  .others-apm-section-container {
+    flex: 40;
+
+    .others-apms-container {
+      margin: 25px;
+    }
+
+    .others-apms-heading {
+      display: flex;
+      flex-flow: column;
+      justify-content: space-between;
+
+      span.others-apms-heading-span {
+        font-size: 20px;
+        font-weight: 600;
+      }
+
+      span.others-apms-subheading-span {
+        font-size: 16px;
+        font-weight: 400;
+        color: #a9adad;
+      }
+    }
+
+    .others-apms-body {
+      display: grid;
+      margin-top: 10px;
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 10px 20px;
+    }
+
+    .apm-overhead {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+
+      .apm-overhead-name {
+        text-align: left;
+        color: #d1d2d2;
+      }
+
+      .apm-overhead-requests {
+        text-align: right;
+        color: #a9adad;
+      }
+    }
+  }
+
+  .performance-pane {
+    padding: 13px 17px;
+
+    span {
+      display: block;
+    }
+
+
+    .title {
+      color: #d1d2d2;
+      font-size: 20px;
+      font-weight: 600;
+    }
+
+    .nsolid-version {
+      font-weight: 600;
+      font-size: 22px;
+      color: #5ac878;
+
+      &::before {
+        content: '';
+        width: 20px;
+        height: 20px;
+        border-radius: 5px;
+      }
+    }
+
+    .requests-per-second {
+      margin-top: 27px;
+      font-size: 20px;
+      font-weight: 400;
+      color: #b8b9b9;
+    }
+  }
+
+  .dashboard-section {
+    span.dashboard-title {
+      font-size: 3em;
+      font-weight: normal;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: normal;
+      letter-spacing: -0.37px;
+      text-align: left;
+      color: #f5f7f7;
+    }
+
+    span.version-selector-span {
+      font-weight: 600;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.65;
+      letter-spacing: normal;
+      text-align: left;
+      color: #f5f7f7;
+    }
+  }
+}

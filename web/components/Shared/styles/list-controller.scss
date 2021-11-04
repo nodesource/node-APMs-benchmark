@@ -1,0 +1,128 @@
+.list-wrapper {
+  display: flex;
+  flex-flow: column;
+}
+
+.controller-wrapper {
+  display: flex;
+  flex-direction: row;
+  margin: 5px 0;
+
+  .controller-container {
+    padding-left: 35px;
+    display: flex;
+    position: relative;
+    user-select: none;
+    font-weight: 400;
+    font-size: 13px;
+    color: #f5f7f7;
+    align-items: center;
+
+    &.disabled {
+      cursor: not-allowed;
+    }
+  }
+
+  input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+
+  input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+
+  .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 15px;
+    width: 15px;
+    border: 1px solid #fff;
+    border-radius: 2px;
+  }
+
+  input[type="radio"] ~ .checkmark {
+    border-radius: 50%;
+  }
+
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+
+
+  input:checked ~ .checkmark:after {
+    display: block;
+  }
+
+  label.controller-container {
+    > .checkmark:after {
+      left: 4px;
+      top: 1px;
+      width: 4px;
+      height: 8px;
+      border: solid#F5F7F7;
+      border-width: 0 2px 2px 0;
+      -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+      transform: rotate(45deg);
+    }
+
+    input[type="radio"] ~ .checkmark:after {
+      left: 3px;
+      top: 3px;
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: #F5F7F7;
+      border: none;
+    }
+  }
+
+  // // Hide checkbox html
+  // .controller-container input {
+  //   position: absolute;
+  //   opacity: 0;
+  //   height: 0;
+  //   width: 0;
+  //   margin-right: 20px;
+  // }
+
+  // // Create the custom checkbox element
+  // .checkmark {
+  //   position: absolute;
+  //   top: 0;
+  //   left: 0;
+  //   height: 15px;
+  //   width: 15px;
+  //   background-color: transparent;
+  //   border: 1px solid #d1d2d2;
+  // }
+}
+
+.legend {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.list-icon-wrapper {
+  margin-bottom: 15px;
+
+  span {
+    font-weight: 600;
+    font-size: 17px;
+    color: #e1e7e6;
+    margin-left: 11px;
+  }
+}
