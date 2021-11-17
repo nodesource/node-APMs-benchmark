@@ -240,17 +240,27 @@ export function makeMetricGraph (metricName, statName, rawData, el, units, apms,
     .attr('fill', '#89A19D')
     .attr('stroke', '#89A19D')
 
-  svg.append('text')
-    .attr('transform', 'rotate(-90)')
-    .attr('font-family', 'sans-serif')
-    .attr('font-size', 12)
-    .attr('fill', '#89A19D')
-    .attr('stroke', '#89A19D')
-    .attr('dy', '1em')
-    .attr('y', 0 - margin.left)
-    .attr('x', 0 - (height / 2))
-    .style('text-anchor', 'middle')
-    .text(units)
+  if (units) {
+    const unit = units.replace(/\(([^)]+)\)/, '')
+    const legend = units.match(/\(([^)]+)\)/) || ''
+
+    svg.append('text')
+      .attr('transform', 'rotate(-90)')
+      .attr('font-family', 'sans-serif')
+      .attr('font-size', 12)
+      .attr('fill', '#fff')
+      .attr('stroke', '#fff')
+      .attr('dy', '1em')
+      .attr('y', 0 - margin.left)
+      .attr('x', 0 - (height / 2))
+      .style('text-anchor', 'middle')
+      .style('letter-spacing', '0.05em')
+      .text(unit)
+      .append('tspan')
+      .attr('fill', '#89A19D')
+      .attr('stroke', '#89A19D')
+      .text(legend[0])
+  }
 
   const xSubgroup = d3.scaleBand()
     .domain(subgroups)
