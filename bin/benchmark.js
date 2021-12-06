@@ -79,7 +79,8 @@ async function promptTests () {
         'fastify',
         'hapi',
         'http',
-        'http_loose_loop'
+        'http_loose_loop',
+        'http_client'
       ],
       validate: (input) => {
         if (input.length === 0) {
