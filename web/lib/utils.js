@@ -356,7 +356,7 @@ export async function renderGraphs (runId, testCase, apms, metrics, typeGraph) {
 
   // Clean existing graphs.
   parent.html(null)
-  const order = ['requests.p50', 'requests.p99', 'requests.max', 'requests.min', 'cpu', 'elu', 'rss', 'heapUsed', 'heapTotal', 'external', 'arrayBuffers', 'throughput.p50', 'throughput.p99', 'throughput.max', 'throughput.min', 'latency.p50', 'latency.p99', 'latency.max', 'latency.min', 'uptime', 'loadTime', 'errors']
+  const order = ['requests.p50', 'requests.avg', 'requests.p99', 'requests.max', 'requests.min', 'cpu', 'elu', 'rss', 'heapUsed', 'heapTotal', 'external', 'arrayBuffers', 'throughput.p50', 'throughput.p99', 'throughput.max', 'throughput.min', 'latency.p50', 'latency.p99', 'latency.max', 'latency.min', 'uptime', 'loadTime', 'errors']
 
   sortBy(order, Object.keys(data)).forEach(metric => {
     Object.keys(data[metric]).forEach(stat => {

@@ -48,6 +48,10 @@ export const testsOpts = {
       value: 'http'
     },
     {
+      name: 'HTTP Client',
+      value: 'http_client'
+    },
+    {
       name: 'HTTP loose loop',
       value: 'http_loose_loop'
     },
