@@ -75,8 +75,13 @@ async function promptTests () {
       name: 'tests',
       message: 'Please choose the tests to run: ',
       choices: [
+        'apollo-graphql',
+        'basic',
+        'block',
         'express',
+        'express-graphql',
         'fastify',
+        'fastify-mercurius-graphql',
         'hapi',
         'http',
         'http_loose_loop',

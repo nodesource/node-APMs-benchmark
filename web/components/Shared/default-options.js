@@ -74,6 +74,18 @@ export const testsOpts = {
     {
       name: 'Hapi',
       value: 'hapi'
+    },
+    {
+      name: 'Apollo GraphQL',
+      value: 'apollo-graphql'
+    },
+    {
+      name: 'Fastify Mercurius GraphQL',
+      value: 'fastify-mercurius-graphql'
+    },
+    {
+      name: 'Express GraphQL',
+      value: 'express-graphql'
     }
   ]
 }
