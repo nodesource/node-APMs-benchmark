@@ -155,6 +155,10 @@ async function promptAgents () {
           value: AgentOpts.NSOLID_TRACING
         },
         {
+          name: 'NSolid OTLP',
+          value: AgentOpts.NSOLID_OTLP
+        },
+        {
           name: 'Other APM\'s',
           value: AgentOpts.APM
         },
@@ -225,6 +229,43 @@ async function promptAPMs () {
   return opts.apms
 }
 
+async function promptOTLPAPMs () {
+  const opts = await inquirer.prompt([
+    {
+      type: 'checkbox',
+      name: 'otlp_apms',
+      message: 'Please choose the APM\'s to test with OTLP Agent: ',
+      choices: [
+        {
+          name: 'Datadog',
+          value: 'nsolid_datadog'
+        },
+        {
+          name: 'Dynatrace',
+          value: 'nsolid_dynatrace'
+        },
+        {
+          name: 'New Relic',
+          value: 'nsolid_newrelic'
+        },
+        {
+          name: 'OpenTelemetry',
+          value: 'nsolid_otlp'
+        }
+      ],
+      validate: (input) => {
+        if (input.length === 0) {
+          return 'Choose at least one option'
+        }
+
+        return true
+      }
+    }
+  ])
+
+  return opts.otlp_apms
+}
+
 async function setupRuntimes (runtimes) {
   // Create tmpdir where all the runtimes will be setup
   //  tmpDir
@@ -257,6 +298,10 @@ async function main () {
   options.agents = await promptAgents()
   if (usesApms(options.agents)) {
     options.apms = await promptAPMs()
+  }
+
+  if (options.agents.includes(AgentOpts.NSOLID_OTLP)) {
+    options.otlp_apms = await promptOTLPAPMs()
   }
 
   if (usesNSolid(options.agents)) {

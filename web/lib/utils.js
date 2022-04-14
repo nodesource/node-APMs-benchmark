@@ -11,7 +11,11 @@ export const colorsGroup = {
   dynatrace: '#4cb5ff',
   newrelic: '#00bfc0',
   nsolid: '#5ac878',
+  nsolid_datadog: '#e3ccff',
+  nsolid_dynatrace: '#b3dfff',
+  nsolid_newrelic: '#1affff',
   nsolid_tracing: '#4caa66',
+  nsolid_otlp: 'ffcf66',
   signalfx: '#b6effb',
   appdynamics: '#725eff',
   opentelemetry: '#f5a800'
