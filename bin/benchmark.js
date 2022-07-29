@@ -266,8 +266,7 @@ async function main () {
         runtime.nsolidVersion = nsolid.version
         runtime.nsolidUrl = nsolid.url
       } else {
-        // print some warning because no nsolid version available corresponding
-        // to the LTS node version
+        throw new Error(`No N|Solid version found for Nodejs version: ${runtime.nodeVersion}`)
       }
     }
   }
