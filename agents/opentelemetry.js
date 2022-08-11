@@ -1,7 +1,7 @@
 'use strict'
 
 const api = require('@opentelemetry/api')
-const { BatchSpanProcessor } = require('@opentelemetry/tracing')
+const { BatchSpanProcessor } = require('@opentelemetry/sdk-trace-base')
 const { NodeTracerProvider } = require('@opentelemetry/sdk-trace-node')
 const { registerInstrumentations } = require('@opentelemetry/instrumentation')
 const { DnsInstrumentation } = require('@opentelemetry/instrumentation-dns')
