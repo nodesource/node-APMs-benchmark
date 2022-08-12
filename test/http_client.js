@@ -42,5 +42,14 @@ loadTest(
       'requests.avg': result.rps,
       errors: result.totalErrors
     })
+
+    if (process.channel && BM_AGENT_NAME === 'appdynamics') {
+      process.send({
+        type: 'process:msg',
+        data: {
+          exit: true
+        }
+      })
+    }
   }
 )
