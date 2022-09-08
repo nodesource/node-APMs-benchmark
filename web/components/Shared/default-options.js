@@ -17,6 +17,10 @@ export const apmOpts = {
       value: 'datadog'
     },
     {
+      name: 'NSolid Datadog',
+      value: 'nsolid_datadog'
+    },
+    {
       name: 'Vanilla Node (Noop)',
       value: 'noop'
     },
@@ -29,8 +33,16 @@ export const apmOpts = {
       value: 'newrelic'
     },
     {
+      name: 'NSolid New Relic',
+      value: 'nsolid_newrelic'
+    },
+    {
       name: 'Dynatrace',
       value: 'dynatrace'
+    },
+    {
+      name: 'NSolid Dynatrace',
+      value: 'nsolid_dynatrace'
     },
     {
       name: 'SignalFX',

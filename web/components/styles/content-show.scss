@@ -86,16 +86,13 @@
 
     .apm-overhead {
       display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
+      flex-direction: column;
 
       .apm-overhead-name {
-        text-align: left;
         color: #d1d2d2;
       }
 
       .apm-overhead-requests {
-        text-align: right;
         color: #a9adad;
       }
     }

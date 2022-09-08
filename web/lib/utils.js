@@ -11,9 +11,9 @@ export const colorsGroup = {
   dynatrace: '#4cb5ff',
   newrelic: '#00bfc0',
   nsolid: '#5ac878',
-  nsolid_datadog: '#e3ccff',
-  nsolid_dynatrace: '#b3dfff',
-  nsolid_newrelic: '#1affff',
+  nsolid_datadog: '#d5b1ff',
+  nsolid_dynatrace: '#7ac5fa',
+  nsolid_newrelic: '#61f1f2',
   nsolid_tracing: '#4caa66',
   nsolid_otlp: 'ffcf66',
   signalfx: '#b6effb',
@@ -24,6 +24,12 @@ export const colorsGroup = {
 export const numberFormat = (value = 0) => {
   const numberFormat = new Intl.NumberFormat('en-US')
   return numberFormat.format((value).toFixed(2))
+}
+
+export const apmFormat = (value, metric) => {
+  const number = numberFormat(value)
+  if (number == 0) return '--'
+  return `${number} ${metric}`
 }
 
 export function getHostName () {
